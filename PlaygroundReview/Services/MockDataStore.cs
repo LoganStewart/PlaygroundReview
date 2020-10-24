@@ -6,6 +6,7 @@ using PlaygroundReview.Models;
 
 namespace PlaygroundReview.Services
 {
+
     public class MockDataStore : IDataStore<Item>
     {
         readonly List<Item> items;
@@ -21,6 +22,8 @@ namespace PlaygroundReview.Services
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
             };
+
+            
         }
 
         public async Task<bool> AddItemAsync(Item item)
@@ -55,6 +58,6 @@ namespace PlaygroundReview.Services
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
-        }
+        }    
     }
 }

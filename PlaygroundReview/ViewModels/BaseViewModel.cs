@@ -13,6 +13,7 @@ namespace PlaygroundReview.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Playground> PlaygroundsDataStore => DependencyService.Get<IDataStore<Playground>>();
 
         bool isBusy = false;
         public bool IsBusy

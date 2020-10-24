@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlaygroundReview.Views.PlaygroundsPage"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:PlaygroundReview.ViewModels" 
+             xmlns:model="clr-namespace:PlaygroundReview.Models"
+             x:Name="ListPlaygroundsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddPlaygroundsCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <RefreshView x:DataType="local:PlaygroundsViewModel" Command="{Binding LoadPlaygroundsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" >
+        <CollectionView x:Name="PlaygroundsListView"
+                        ItemsSource="{Binding Playgrounds}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" x:DataType="model:Playground">
+                        <Label Text="{Binding Text}" 
+                               Style="{DynamicResource ListItemTextStyle}"
+                               FontSize="16"/>
+                        <Label Text="{Binding Description}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                    </StackLayout>
+                    <!--
+                    <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    -->
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

@@ -14,6 +14,7 @@ namespace PlaygroundReview
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
+            DependencyService.Register<PlaygroundsDatastore>();
             MainPage = new AppShell();
         }
 
