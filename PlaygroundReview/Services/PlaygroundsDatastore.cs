@@ -1,8 +1,10 @@
 ﻿using PlaygroundReview.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System;
 
 namespace PlaygroundReview.Services
 {
@@ -20,19 +22,24 @@ namespace PlaygroundReview.Services
             };
         }
 
-        public Task<bool> AddItemAsync(Playground item)
+        public async Task<bool> AddItemAsync(Playground item)
         {
-            throw new NotImplementedException();
+            playgrounds.Add(item);
+
+            return await Task.FromResult(true);
         }
 
-        public Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteItemAsync(string id)
         {
-            throw new NotImplementedException();
+            var oldItem = playgrounds.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            playgrounds.Remove(oldItem);
+
+            return await Task.FromResult(true);
         }
 
-        public Task<Playground> GetItemAsync(string id)
+        public async Task<Playground> GetItemAsync(string id)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(playgrounds.FirstOrDefault(s => s.Id == id));
         }
 
         public async Task<IEnumerable<Playground>> GetItemsAsync(bool forceRefresh = false)
@@ -40,9 +47,13 @@ namespace PlaygroundReview.Services
             return await Task.FromResult(playgrounds);
         }
 
-        public Task<bool> UpdateItemAsync(Playground item)
+        public async Task<bool> UpdateItemAsync(Playground item)
         {
-            throw new NotImplementedException();
+            var oldItem = playgrounds.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            playgrounds.Remove(oldItem);
+            playgrounds.Add(item);
+
+            return await Task.FromResult(true);
         }
     }
 }
