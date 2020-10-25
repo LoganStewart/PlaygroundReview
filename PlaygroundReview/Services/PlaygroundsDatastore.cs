@@ -31,7 +31,7 @@ namespace PlaygroundReview.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = playgrounds.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = playgrounds.Where((Playground arg) => arg.Id == id).FirstOrDefault();
             playgrounds.Remove(oldItem);
 
             return await Task.FromResult(true);
@@ -49,7 +49,7 @@ namespace PlaygroundReview.Services
 
         public async Task<bool> UpdateItemAsync(Playground item)
         {
-            var oldItem = playgrounds.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = playgrounds.Where((Playground arg) => arg.Id == item.Id).FirstOrDefault();
             playgrounds.Remove(oldItem);
             playgrounds.Add(item);
 

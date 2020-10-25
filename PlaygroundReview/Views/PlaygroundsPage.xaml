@@ -24,7 +24,16 @@
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
+
+                        
                     </StackLayout>
+<Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+    <RowDefinition Height="*" /></Grid.RowDefinitions>
+</Grid>
                     <!--
                     <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
