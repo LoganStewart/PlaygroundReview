@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
-namespace PlaygroundReview.Models
+namespace PlaygroundReview.Domain
 {
     public class Playground
     {
+      
         public string Id { get; set; }
         public string Text { get; set; }
         public string Description { get; set; }
@@ -20,17 +19,11 @@ namespace PlaygroundReview.Models
         public bool SafeForUnder2 { get; set; }
         public bool SafeFor2To4 { get; set; }
 
-        
-        public int NumberOfSwings { get; set; }
-        public int NumberOfToddlerSwings { get; set; }
+       
+        public List<Parking> Parking { get; set; }
+        public List<Features> Features { get; set; }
 
-        //Tables
-        //Benches
-        //Parking
-        //Features
-        
-
-        public GroundTexture GroundTexture { get; set; }
+        public List<GroundTexture> GroundTexture { get; set; }
 
 
     }

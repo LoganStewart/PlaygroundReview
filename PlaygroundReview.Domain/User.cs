@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace PlaygroundReview.Models
 {
     public class User

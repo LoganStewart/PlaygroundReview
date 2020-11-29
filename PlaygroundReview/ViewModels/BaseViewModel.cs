@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using PlaygroundReview.Models;
 using PlaygroundReview.Services;
+using PlaygroundReview.Domain;
 
 namespace PlaygroundReview.ViewModels
 {

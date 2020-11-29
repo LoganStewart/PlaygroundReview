@@ -1,4 +1,6 @@
-﻿using System;
+using Syncfusion.ListView.XForms.iOS;
+using Syncfusion.XForms.iOS.Border;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,6 +26,8 @@ namespace PlaygroundReview.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            SfListViewRenderer.Init();
+            SfBorderRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

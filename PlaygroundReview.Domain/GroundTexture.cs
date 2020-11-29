@@ -1,5 +1,5 @@
 ﻿using System;
-namespace PlaygroundReview.Models
+namespace PlaygroundReview.Domain
 {
     public enum GroundTexture
     {

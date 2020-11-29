@@ -4,7 +4,7 @@
              x:Class="PlaygroundReview.Views.PlaygroundsPage"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:PlaygroundReview.ViewModels" 
-             xmlns:model="clr-namespace:PlaygroundReview.Models"
+             xmlns:model="clr-namespace:PlaygroundReview.Domain;assembly=PlaygroundReview.Domain"
              x:Name="ListPlaygroundsPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddPlaygroundsCommand}" />
@@ -27,13 +27,7 @@
 
                         
                     </StackLayout>
-<Grid>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*" />
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
-    <RowDefinition Height="*" /></Grid.RowDefinitions>
-</Grid>
+
                     <!--
                     <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
