@@ -1,3 +1,11 @@
+using Syncfusion.XForms.iOS.Graphics;
+using Syncfusion.XForms.iOS.PopupLayout;
+using Syncfusion.XForms.iOS.ComboBox;
+using Syncfusion.SfRating.XForms.iOS;
+using Syncfusion.SfRotator.XForms.iOS;
+using Syncfusion.XForms.iOS.Cards;
+using  Syncfusion.XForms.iOS.Graphics;
+using Syncfusion.XForms.iOS.Buttons;
 using Syncfusion.ListView.XForms.iOS;
 using Syncfusion.XForms.iOS.Border;
 using System;
@@ -26,6 +34,13 @@ namespace PlaygroundReview.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            SfPopupLayoutRenderer.Init();
+            SfComboBoxRenderer.Init();
+            SfRatingRenderer.Init();
+            SfRotatorRenderer.Init();
+            SfCardViewRenderer.Init();
+            SfGradientViewRenderer.Init();
+            SfButtonRenderer.Init();
             SfListViewRenderer.Init();
             SfBorderRenderer.Init();
             LoadApplication(new App());
