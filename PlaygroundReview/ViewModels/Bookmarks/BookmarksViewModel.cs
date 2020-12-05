@@ -115,7 +115,8 @@ namespace PlaygroundReview.ViewModels.Bookmarks
                 }
 
                 this.latestStories = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(LatestStories));
+
             }
         }
 

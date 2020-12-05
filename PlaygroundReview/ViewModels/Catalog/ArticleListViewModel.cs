@@ -131,7 +131,8 @@ namespace PlaygroundReview.ViewModels.Catalog
                 }
 
                 this.featuredStories = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(FeaturedStories));
+
             }
         }
 
@@ -153,7 +154,8 @@ namespace PlaygroundReview.ViewModels.Catalog
                 }
 
                 this.latestStories = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(LatestStories));
+
             }
         }
         #endregion

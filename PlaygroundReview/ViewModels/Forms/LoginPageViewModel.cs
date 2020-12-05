@@ -51,7 +51,8 @@ namespace PlaygroundReview.ViewModels.Forms
                 }
 
                 this.password = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(Password));
+
             }
         }
 

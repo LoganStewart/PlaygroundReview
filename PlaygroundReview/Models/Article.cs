@@ -69,9 +69,11 @@ namespace PlaygroundReview.Models
             set
             {
                 this.isBookmarked = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(IsBookmarked));
+
             }
-        }
+
+}
 
         /// <summary>
         /// Gets or sets a value indicating whether the article is favourite.
@@ -86,7 +88,8 @@ namespace PlaygroundReview.Models
             set
             {
                 this.isFavourite = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(IsFavourite));
+
             }
         }
 

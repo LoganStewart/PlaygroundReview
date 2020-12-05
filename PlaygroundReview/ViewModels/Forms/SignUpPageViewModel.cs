@@ -52,7 +52,8 @@ namespace PlaygroundReview.ViewModels.Forms
                 }
 
                 this.name = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(Name));
+
             }
         }
 
@@ -74,7 +75,9 @@ namespace PlaygroundReview.ViewModels.Forms
                 }
 
                 this.password = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(Password));
+
+
             }
         }
 
@@ -96,7 +99,9 @@ namespace PlaygroundReview.ViewModels.Forms
                 }
 
                 this.confirmPassword = value;
-                this.NotifyPropertyChanged();
+                this.OnPropertyChanged(nameof(ConfirmPassword));
+
+
             }
         }
 

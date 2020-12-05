@@ -9,6 +9,8 @@ namespace PlaygroundReview.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         public Command LoginCommand { get; }
+        public string Email { get; internal set; }
+        public bool IsInvalidEmail { get; internal set; }
 
         public LoginViewModel()
         {
